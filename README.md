@@ -1,4 +1,4 @@
-# Text-to-SQL Model
+# Text-to-SQL Formal Verification Project
 
 A comprehensive text-to-SQL generation and verification system that converts natural language questions to SQL queries and verifies their equivalence using formal verification methods.
 
