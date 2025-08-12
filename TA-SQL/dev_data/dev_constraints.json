@@ -1,0 +1,362 @@
+{
+    "california_schools": [
+        [
+            {"primary": [{"value": "FRPM__CDSCODE"}]},
+            {"primary": [{"value": "SATSCORES__CDS"}]},
+            {"primary": [{"value": "SCHOOLS__CDSCODE"}]},
+            {"foreign": [{"value": "SATSCORES__CDS"}, {"value": "SCHOOLS__CDSCODE"}]},
+            {"foreign": [{"value": "FRPM__CDSCODE"}, {"value": "SCHOOLS__CDSCODE"}]}
+        ]
+    ], 
+    "debit_card_specializing": [
+        [
+            { "primary": [{ "value": "CUSTOMERS__CUSTOMERID" }] },
+            { "primary": [{ "value": "GASSTATIONS__GASSTATIONID" }] },
+            { "primary": [{ "value": "PRODUCTS__PRODUCTID" }] },
+            { "primary": [{ "value": "TRANSACTIONS_1K__TRANSACTIONID" }] },
+            { "primary": [{ "value": "YEARMONTH__CUSTOMERID" }, { "value": "YEARMONTH__DATE" }] },
+            { "foreign": [{ "value": "YEARMONTH__CUSTOMERID" }, { "value": "CUSTOMERS__CUSTOMERID" }]}
+        ]
+    ],
+    "financial": [
+        [
+            { "primary": [{ "value": "ACCOUNT__ACCOUNT_ID" }] },
+            { "primary": [{ "value": "CARD__CARD_ID" }] },
+            { "primary": [{ "value": "CLIENT__CLIENT_ID" }] },
+            { "primary": [{ "value": "DISP__DISP_ID" }] },
+            { "primary": [{ "value": "DISTRICT__DISTRICT_ID" }] },
+            { "primary": [{ "value": "LOAN__LOAN_ID" }] },
+            { "primary": [{ "value": "ORDER__ORDER_ID" }] },
+            { "primary": [{ "value": "TRANS__TRANS_ID" }] },
+            { "foreign": [{ "value": "ACCOUNT__DISTRICT_ID" }, { "value": "DISTRICT__DISTRICT_ID" }]},
+            { "foreign": [{ "value": "CARD__DISP_ID" }, { "value": "DISP__DISP_ID" }] },
+            { "foreign": [{ "value": "CLIENT__DISTRICT_ID" }, { "value": "DISTRICT__DISTRICT_ID" }] },
+            { "foreign": [{ "value": "DISP__CLIENT_ID" }, { "value": "CLIENT__CLIENT_ID" }] },
+            { "foreign": [{ "value": "DISP__ACCOUNT_ID" }, { "value": "ACCOUNT__ACCOUNT_ID" }] },
+            { "foreign": [{ "value": "LOAN__ACCOUNT_ID" }, { "value": "ACCOUNT__ACCOUNT_ID" }] },
+            { "foreign": [{ "value": "ORDER__ACCOUNT_ID" }, { "value": "ACCOUNT__ACCOUNT_ID" }] },
+            { "foreign": [{ "value": "TRANS__ACCOUNT_ID" }, { "value": "ACCOUNT__ACCOUNT_ID" }] }
+        ]
+    ],
+    "formula_1": [
+        [
+            { "primary": [{ "value": "CIRCUITS__CIRCUITID" }] },
+            { "primary": [{ "value": "CONSTRUCTORS__CONSTRUCTORID" }] },
+            { "primary": [{ "value": "DRIVERS__DRIVERID" }] },
+            { "primary": [{ "value": "SEASONS__YEAR" }] },
+            { "primary": [{ "value": "RACES__RACEID" }] },
+            { "primary": [{ "value": "CONSTRUCTORRESULTS__CONSTRUCTORRESULTSID" }] },
+            { "primary": [{ "value": "CONSTRUCTORSTANDINGS__CONSTRUCTORSTANDINGSID" }] },
+            { "primary": [{ "value": "DRIVERSTANDINGS__DRIVERSTANDINGSID" }] },
+            { "primary": [{ "value": "LAPTIMES__RACEID" }, { "value": "LAPTIMES__DRIVERID" }, { "value": "LAPTIMES__LAP" }] },
+            { "primary": [{ "value": "PITSTOPS__RACEID" }, { "value": "PITSTOPS__DRIVERID" }, { "value": "PITSTOPS__STOP" }] },
+            { "primary": [{ "value": "QUALIFYING__QUALIFYID" }] },
+            { "primary": [{ "value": "STATUS__STATUSID" }] },
+            { "primary": [{ "value": "RESULTS__RESULTID" }] },
+            { "foreign": [{ "value": "RACES__CIRCUITID" }, { "value": "CIRCUITS__CIRCUITID" }] },
+            { "foreign": [{ "value": "RACES__YEAR" }, { "value": "SEASONS__YEAR" }] },
+            { "foreign": [{ "value": "CONSTRUCTORRESULTS__CONSTRUCTORID" }, { "value": "CONSTRUCTORS__CONSTRUCTORID" }] },
+            { "foreign": [{ "value": "CONSTRUCTORRESULTS__RACEID" }, { "value": "RACES__RACEID" }] },
+            { "foreign": [{ "value": "CONSTRUCTORSTANDINGS__CONSTRUCTORID" }, { "value": "CONSTRUCTORS__CONSTRUCTORID" }] },
+            { "foreign": [{ "value": "CONSTRUCTORSTANDINGS__RACEID" }, { "value": "RACES__RACEID" }] },
+            { "foreign": [{ "value": "DRIVERSTANDINGS__DRIVERID" }, { "value": "DRIVERS__DRIVERID" }] },
+            { "foreign": [{ "value": "DRIVERSTANDINGS__RACEID" }, { "value": "RACES__RACEID" }] },
+            { "foreign": [{ "value": "LAPTIMES__DRIVERID" }, { "value": "DRIVERS__DRIVERID" }] },
+            { "foreign": [{ "value": "LAPTIMES__RACEID" }, { "value": "RACES__RACEID" }] },
+            { "foreign": [{ "value": "PITSTOPS__DRIVERID" }, { "value": "DRIVERS__DRIVERID" }] },
+            { "foreign": [{ "value": "PITSTOPS__RACEID" }, { "value": "RACES__RACEID" }] },
+            { "foreign": [{ "value": "QUALIFYING__CONSTRUCTORID" }, { "value": "CONSTRUCTORS__CONSTRUCTORID" }] },
+            { "foreign": [{ "value": "QUALIFYING__DRIVERID" }, { "value": "DRIVERS__DRIVERID" }] },
+            { "foreign": [{ "value": "QUALIFYING__RACEID" }, { "value": "RACES__RACEID" }] },
+            { "foreign": [{ "value": "RESULTS__STATUSID" }, { "value": "STATUS__STATUSID" }] },
+            { "foreign": [{ "value": "RESULTS__CONSTRUCTORID" }, { "value": "CONSTRUCTORS__CONSTRUCTORID" }] },
+            { "foreign": [{ "value": "RESULTS__DRIVERID" }, { "value": "DRIVERS__DRIVERID" }] },
+            { "foreign": [{ "value": "RESULTS__RACEID" }, { "value": "RACES__RACEID" }] }
+        ]
+    ],
+    "card_games": [
+        [
+            { "primary": [{ "value": "CARDS__ID" }] },
+            { "primary": [{ "value": "FOREIGN_DATA__ID" }] },
+            { "primary": [{ "value": "LEGALITIES__ID" }] },
+            { "primary": [{ "value": "SETS__ID" }] },
+            { "primary": [{ "value": "SET_TRANSLATIONS__ID" }] },
+            { "primary": [{ "value": "RULINGS__ID" }] },
+            {"foreign": [{ "value": "FOREIGN_DATA__UUID" }, { "value": "CARDS__UUID" }]},
+            {"foreign": [{ "value": "LEGALITIES__UUID" }, { "value": "CARDS__UUID" }]},
+            {"foreign": [{ "value": "RULINGS__UUID" }, { "value": "CARDS__UUID" }]},
+            {"foreign": [{ "value": "SET_TRANSLATIONS__SETCODE" }, { "value": "CARDS__SETCODE" }]}
+        ]
+    ],
+
+    "european_football_2": [
+        [
+            { "primary": [{ "value": "PLAYER_ATTRIBUTES__ID" }] },
+            { "primary": [{ "value": "PLAYER__ID" }] },
+            { "primary": [{ "value": "LEAGUE__ID" }] },
+            { "primary": [{ "value": "COUNTRY__ID" }] },
+            { "primary": [{ "value": "TEAM__ID" }] },
+            { "primary": [{ "value": "TEAM_ATTRIBUTES__ID" }] },
+            { "primary": [{ "value": "MATCH__ID" }] },
+            { "foreign": [{ "value": "PLAYER_ATTRIBUTES__PLAYER_API_ID" }, { "value": "PLAYER__PLAYER_API_ID" }] },
+            { "foreign": [{ "value": "PLAYER_ATTRIBUTES__PLAYER_FIFA_API_ID" }, { "value": "PLAYER__PLAYER_FIFA_API_ID" }] },
+            { "foreign": [{ "value": "LEAGUE__COUNTRY_ID" }, { "value": "COUNTRY__ID" }] },
+            { "foreign": [{ "value": "TEAM__TEAM_FIFA_API_ID" }, { "value": "TEAM_ATTRIBUTES__TEAM_FIFA_API_ID" }] },
+            { "foreign": [{ "value": "TEAM__TEAM_API_ID" }, { "value": "TEAM_ATTRIBUTES__TEAM_API_ID" }] },
+            { "foreign": [{ "value": "MATCH__LEAGUE_ID" }, { "value": "LEAGUE__ID" }] },
+            { "foreign": [{ "value": "MATCH__COUNTRY_ID" }, { "value": "COUNTRY__ID" }] }
+        ]
+    ],
+
+    "thrombosis_prediction": [
+        [
+            { "primary": [{ "value": "PATIENT__ID" }] },
+            { "primary": [{ "value": "LABORATORY__ID" }, { "value": "LABORATORY__DATE" }] },
+            { "foreign": [{ "value": "EXAMINATION__ID" }, { "value": "PATIENT__ID" }] },
+            { "foreign": [{ "value": "LABORATORY__ID" }, { "value": "PATIENT__ID" }] }
+        ]
+    ],
+
+    "toxicology": [
+        [
+            { "primary": [{ "value": "ATOM__ATOM_ID" }] },
+            { "primary": [{ "value": "BOND__BOND_ID" }] },
+            { "primary": [{ "value": "CONNECTED__ATOM_ID" }, { "value": "CONNECTED__ATOM_ID2" }] },
+            { "primary": [{ "value": "MOLECULE__MOLECULE_ID" }] },
+            { "foreign": [{ "value": "ATOM__MOLECULE_ID" }, { "value": "MOLECULE__MOLECULE_ID" }] },
+            { "foreign": [{ "value": "BOND__MOLECULE_ID" }, { "value": "MOLECULE__MOLECULE_ID" }] },
+            { "foreign": [{ "value": "CONNECTED__BOND_ID" }, { "value": "BOND__BOND_ID" }] },
+            { "foreign": [{ "value": "CONNECTED__ATOM_ID2" }, { "value": "ATOM__ATOM_ID" }] },
+            { "foreign": [{ "value": "CONNECTED__ATOM_ID" }, { "value": "ATOM__ATOM_ID" }] }
+        ]
+    ],
+
+    "student_club": [
+        [{ "primary": [{ "value": "EVENT__EVENT_ID" }] }, 
+        { "primary": [{ "value": "MAJOR__MAJOR_ID" }] },
+      { "primary": [{ "value": "ZIP_CODE__ZIP_CODE" }] },
+      {
+        "primary": [
+          { "value": "ATTENDANCE__LINK_TO_EVENT" },
+          { "value": "ATTENDANCE__LINK_TO_MEMBER" }
+        ]
+      },
+      { "primary": [{ "value": "BUDGET__BUDGET_ID" }] },
+      { "primary": [{ "value": "EXPENSE__EXPENSE_ID" }] },
+      { "primary": [{ "value": "INCOME__INCOME_ID" }] },
+      { "primary": [{ "value": "MEMBER__MEMBER_ID" }] },
+      {
+        "foreign": [
+          { "value": "ATTENDANCE__LINK_TO_MEMBER" },
+          { "value": "MEMBER__MEMBER_ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "ATTENDANCE__LINK_TO_EVENT" },
+          { "value": "EVENT__EVENT_ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "BUDGET__LINK_TO_EVENT" },
+          { "value": "EVENT__EVENT_ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "EXPENSE__LINK_TO_MEMBER" },
+          { "value": "MEMBER__MEMBER_ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "EXPENSE__LINK_TO_BUDGET" },
+          { "value": "BUDGET__BUDGET_ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "INCOME__LINK_TO_MEMBER" },
+          { "value": "MEMBER__MEMBER_ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "MEMBER__ZIP" },
+          { "value": "ZIP_CODE__ZIP_CODE" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "MEMBER__LINK_TO_MAJOR" },
+          { "value": "MAJOR__MAJOR_ID" }
+        ]
+      }
+        ]
+    ],
+
+    "superhero": [
+        [
+      { "primary": [{ "value": "ALIGNMENT__ID" }] },
+      { "primary": [{ "value": "ATTRIBUTE__ID" }] },
+      { "primary": [{ "value": "COLOUR__ID" }] },
+      { "primary": [{ "value": "GENDER__ID" }] },
+      { "primary": [{ "value": "PUBLISHER__ID" }] },
+      { "primary": [{ "value": "RACE__ID" }] },
+      { "primary": [{ "value": "SUPERHERO__ID" }] },
+      { "primary": [{ "value": "SUPERPOWER__ID" }] },
+      {
+        "foreign": [
+          { "value": "SUPERHERO__SKIN_COLOUR_ID" },
+          { "value": "COLOUR__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "SUPERHERO__RACE_ID" },
+          { "value": "RACE__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "SUPERHERO__PUBLISHER_ID" },
+          { "value": "PUBLISHER__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "SUPERHERO__HAIR_COLOUR_ID" },
+          { "value": "COLOUR__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "SUPERHERO__GENDER_ID" },
+          { "value": "GENDER__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "SUPERHERO__EYE_COLOUR_ID" },
+          { "value": "COLOUR__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "SUPERHERO__ALIGNMENT_ID" },
+          { "value": "ALIGNMENT__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "HERO_ATTRIBUTE__HERO_ID" },
+          { "value": "SUPERHERO__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "HERO_ATTRIBUTE__ATTRIBUTE_ID" },
+          { "value": "ATTRIBUTE__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "HERO_POWER__POWER_ID" },
+          { "value": "SUPERPOWER__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "HERO_POWER__HERO_ID" },
+          { "value": "SUPERHERO__ID" }
+        ]
+      }
+    ]
+    ],
+
+    "codebase_community": [
+        [
+      { "primary": [{ "value": "BADGES__ID" }] },
+      { "primary": [{ "value": "COMMENTS__ID" }] },
+      { "primary": [{ "value": "POSTHISTORY__ID" }] },
+      { "primary": [{ "value": "POSTLINKS__ID" }] },
+      { "primary": [{ "value": "POSTS__ID" }] },
+      { "primary": [{ "value": "TAGS__ID" }] },
+      { "primary": [{ "value": "USERS__ID" }] },
+      { "primary": [{ "value": "VOTES__ID" }] },
+      {
+        "foreign": [
+          { "value": "BADGES__USERID" },
+          { "value": "USERS__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "COMMENTS__USERID" },
+          { "value": "USERS__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "COMMENTS__POSTID" },
+          { "value": "POSTS__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "POSTHISTORY__USERID" },
+          { "value": "USERS__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "POSTHISTORY__POSTID" },
+          { "value": "POSTS__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "POSTLINKS__RELATEDPOSTID" },
+          { "value": "POSTS__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "POSTLINKS__POSTID" },
+          { "value": "POSTS__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "POSTS__OWNERUSERID" },
+          { "value": "USERS__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "POSTS__LASTEDITORUSERID" },
+          { "value": "USERS__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "TAGS__EXCERPTPOSTID" },
+          { "value": "POSTS__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "VOTES__USERID" },
+          { "value": "USERS__ID" }
+        ]
+      },
+      {
+        "foreign": [
+          { "value": "VOTES__POSTID" },
+          { "value": "POSTS__ID" }
+        ]
+      }
+    ]
+    ]
+}

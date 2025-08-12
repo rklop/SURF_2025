@@ -1,0 +1,6 @@
+README.md
+setup.py
+verieql.egg-info/PKG-INFO
+verieql.egg-info/SOURCES.txt
+verieql.egg-info/dependency_links.txt
+verieql.egg-info/top_level.txt
