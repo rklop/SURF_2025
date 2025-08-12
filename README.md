@@ -205,18 +205,6 @@ Key dependencies include:
 4. Add tests if applicable
 5. Submit a pull request
 
-## License
-
-[Add license information here]
-
-## Citation
-
-If you use this work in your research, please cite:
-
-```
-[Add citation information here]
-```
-
 ## Contact
 
-For questions and support, please contact [contact information].
+For questions and support, please contact rklopfenstein27@amherst.edu 
