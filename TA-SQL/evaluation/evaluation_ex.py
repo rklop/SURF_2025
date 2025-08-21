@@ -171,7 +171,7 @@ if __name__ == "__main__":
         for qid, res in ultimate_results
     ]
 
-    with open("data/final_results.csv", "w") as f:
+    with open("other_models/omni/omni_3_final_results.csv", "w") as f:
         writer = csv.DictWriter(f, fieldnames=headers)
         writer.writeheader()
         for row in new_ultimate_results:

@@ -68,15 +68,15 @@ def normalize_cell(x: Any) -> Any:
         pass
     return str(x)
 
-def normalize_result(cursor: sqlite3.Cursor, rows: List[Tuple]) -> Dict[str, Any]:
-    """
-    Represent a result as:
-      {"columns": [...], "rows": [(...), (...), ...]}
-    Rows are sorted for order-insensitive comparison.
-    """
-    cols = [d[0] for d in (cursor.description or [])]
+def normalize_result(cursor, rows: List[Tuple]) -> Dict[str, Any]:
+    cols = [d[0] for d in cursor.description] if cursor.description else []
     norm_rows = [tuple(normalize_cell(v) for v in r) for r in rows]
-    norm_rows_sorted = sorted(norm_rows)
+
+    # Use JSON string as the sort key to avoid type-comparison errors
+    norm_rows_sorted = sorted(
+        norm_rows,
+        key=lambda r: json.dumps(r, sort_keys=True, ensure_ascii=False)
+    )
     return {"columns": cols, "rows": norm_rows_sorted}
 
 def result_fingerprint(res: Dict[str, Any]) -> str:
@@ -96,11 +96,9 @@ def maybe_scalar(res: Dict[str, Any]) -> Any:
 # ------------------------------
 
 def run_sqlite_case(setup_sql: str, q1: str, q2: str) -> Dict[str, Any]:
-    """
-    Fresh in-memory SQLite DB, load setup_sql, run q1 & q2, compare results.
-    """
     out: Dict[str, Any] = {
-        "equal": False,
+        # equal will now be a string: "True" | "False" | "Error"
+        "equal": "Error",
         "q1_ok": False, "q2_ok": False,
         "q1_error": "", "q2_error": "",
         "q1_columns": None, "q2_columns": None,
@@ -125,7 +123,7 @@ def run_sqlite_case(setup_sql: str, q1: str, q2: str) -> Dict[str, Any]:
     except Exception as e:
         out["q1_error"] = f"setup_error: {e}"
         con.close()
-        return out
+        return out  # equal stays "Error"
 
     # q1
     try:
@@ -157,8 +155,11 @@ def run_sqlite_case(setup_sql: str, q1: str, q2: str) -> Dict[str, Any]:
     except Exception as e:
         out["q2_error"] = str(e)
 
+    # Only compute equality if both queries succeeded
     if out["q1_ok"] and out["q2_ok"]:
-        out["equal"] = (out["q1_fingerprint"] == out["q2_fingerprint"])
+        out["equal"] = "True" if (out["q1_fingerprint"] == out["q2_fingerprint"]) else "False"
+    else:
+        out["equal"] = "Error"
 
     con.close()
     return out

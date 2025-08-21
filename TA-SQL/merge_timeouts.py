@@ -35,9 +35,9 @@ def format_sql(s: Optional[str]) -> str:
 
 
 def parse_timed_pairs(text: str) -> List[Tuple[int, int]]:
-    """Extract (question_id, bound_size) from lines like .../csvs/163_5.csv ..."""
+    """Extract (question_id, bound_size) from lines like .../csvs/163_5.csv or .../csvs2/163_5.csv ..."""
     pairs: List[Tuple[int,int]] = []
-    for m in re.finditer(r"/csvs/(\d+)_(\d+)\.csv", text):
+    for m in re.finditer(r"/csvs2?/(\d+)_(\d+)\.csv", text):
         qid = int(m.group(1))
         bound = int(m.group(2))
         pairs.append((qid, bound))
