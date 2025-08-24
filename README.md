@@ -1,5 +1,7 @@
 # Text-to-SQL Model
 
+![Poster](TA-SQL/SURF_REAL.png)
+
 A comprehensive text-to-SQL generation and verification system that converts natural language questions to SQL queries and verifies their equivalence using formal verification methods.
 
 ## Overview
